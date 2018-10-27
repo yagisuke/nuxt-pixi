@@ -1,3 +1,5 @@
+const { resolve } = require('path');
+
 module.exports = {
   /*
   ** Headers of the page
@@ -14,10 +16,13 @@ module.exports = {
     ]
   },
   plugins: [
-    { src: '~plugins/pixi', ssr: false }
+    { src: '~/plugins/pixi', ssr: false }
   ],
+  generate: {
+    dir: resolve(__dirname, './dist/nuxt-pixi/')
+  },
   router: {
-    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/nuxt-pixi/' : '/nuxt-pixi/'
+    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/nuxt-pixi/' : '/'
   },
   /*
   ** Customize the progress bar color
