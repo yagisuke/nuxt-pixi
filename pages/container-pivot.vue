@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Container Pivot</h1>
-    <cite>https://pixijs.io/examples/required/assets/basics/bunny.png</cite>
+    <a href="https://pixijs.io/examples/#/basics/container-pivot.js" target="_blank"><cite>https://pixijs.io/examples/#/basics/container-pivot.js</cite></a>
     <blockquote id="pixi" />
   </div>
 </template>
@@ -46,4 +46,5 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+</style>
