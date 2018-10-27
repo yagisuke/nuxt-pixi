@@ -17,7 +17,7 @@ module.exports = {
     { src: '~plugins/pixi', ssr: false }
   ],
   router: {
-    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/nuxt-pixi/' : '/'
+    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/nuxt-pixi/' : '/nuxt-pixi/'
   },
   /*
   ** Customize the progress bar color
