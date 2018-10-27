@@ -6,18 +6,19 @@
 </template>
 
 <script>
-import BackLink from '~/components/molecules/link/back-link'
+import BackLink from "~/components/molecules/link/back-link"
 
 export default {
   components: {
     BackLink
-  }  
+  }
 }
 </script>
 
-
 <style>
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
 }

@@ -4,18 +4,26 @@ module.exports = {
     browser: true,
     node: true
   },
+  globals: {
+    PIXI: true
+  },
   parserOptions: {
     parser: 'babel-eslint'
   },
   extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential'
+    "eslint:recommended",
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended"
   ],
-  // required to lint *.vue files
+  // *.vue ファイルを lint にかけるために必要
   plugins: [
     'vue'
   ],
-  // add your custom rules here
-  rules: {}
+  // ここにカスタムルールを追加します。
+  rules: {
+    "semi": [2, "never"],
+    "no-console": "off",
+    "vue/max-attributes-per-line": "off",
+    "prettier/prettier": ["error", { "semi": false }]
+  }
 }
