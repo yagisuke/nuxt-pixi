@@ -17,7 +17,7 @@ module.exports = {
     ]
   },
   plugins: [
-    { src: '~/plugins/pixi', ssr: false }
+    { src: '@/plugins/pixi', ssr: false }
   ],
   /*
   ** Customize the progress bar color
