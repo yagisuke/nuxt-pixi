@@ -1,4 +1,7 @@
 module.exports = {
+  router: {
+    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/nuxt-pixi/' : '/'
+  },
   /*
   ** Headers of the page
   */
@@ -37,9 +40,6 @@ module.exports = {
         })
       }
     }
-  },
-  router: {
-    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/nuxt-pixi/' : '/'
   }
 }
 
