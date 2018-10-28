@@ -1,9 +1,6 @@
 var baseRoute = env => (env === "GH_PAGES" ? "/nuxt-pixi/" : "/")
 
 module.exports = {
-  router: {
-    base: baseRoute(process.env.DEPLOY_ENV)
-  },
   /*
   ** Headers of the page
   */
@@ -23,6 +20,9 @@ module.exports = {
     ]
   },
   plugins: [{ src: "@/plugins/pixi", ssr: false }],
+  router: {
+    base: baseRoute(process.env.DEPLOY_ENV)
+  },
   /*
   ** Customize the progress bar color
   */
