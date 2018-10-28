@@ -1,6 +1,6 @@
 <template>
   <div class="back-link">
-    <nuxt-link to="/">トップへもどる</nuxt-link>
+    <nuxt-link to="/">Back</nuxt-link>
   </div>
 </template>
 
