@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Snow</h1>
+    Reference:
     <a href="https://qiita.com/Sr_Bangs/items/df4094e259d0c9c7ff82" target="_blank">
       <cite>https://qiita.com/Sr_Bangs/items/df4094e259d0c9c7ff82</cite>
     </a>

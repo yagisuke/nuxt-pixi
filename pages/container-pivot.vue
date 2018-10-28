@@ -1,7 +1,10 @@
 <template>
   <div>
     <h1>Container Pivot</h1>
-    <a href="https://pixijs.io/examples/#/basics/container-pivot.js" target="_blank"><cite>https://pixijs.io/examples/#/basics/container-pivot.js</cite></a>
+    Reference:
+    <a href="https://pixijs.io/examples/#/basics/container-pivot.js" target="_blank">
+      <cite>https://pixijs.io/examples/#/basics/container-pivot.js</cite>
+    </a>
     <blockquote id="pixi" />
   </div>
 </template>
