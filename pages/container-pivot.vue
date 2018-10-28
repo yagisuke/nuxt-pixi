@@ -9,21 +9,19 @@
 <script>
 export default {
   mounted: function() {
-    var app = new PIXI.Application(800, 600, { backgroundColor: 0x1099bb })
+    const app = new PIXI.Application(800, 600, { backgroundColor: 0x1099bb })
     document.getElementById("pixi").appendChild(app.view)
 
-    var container = new PIXI.Container()
+    const container = new PIXI.Container()
 
     app.stage.addChild(container)
 
     // Create a new texture
-    var texture = PIXI.Texture.fromImage(
-      "https://pixijs.io/examples/required/assets/basics/bunny.png"
-    )
+    const texture = PIXI.Texture.fromImage("/container-pivot/santa.gif")
 
     // Create a 5x5 grid of bunnies
-    for (var i = 0; i < 25; i++) {
-      var bunny = new PIXI.Sprite(texture)
+    for (let i = 0; i < 25; i++) {
+      const bunny = new PIXI.Sprite(texture)
       bunny.anchor.set(0.5)
       bunny.x = (i % 5) * 40
       bunny.y = Math.floor(i / 5) * 40

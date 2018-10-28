@@ -1,6 +1,8 @@
+var baseRoute = env => (env === "GH_PAGES" ? "/nuxt-pixi/" : "/")
+
 module.exports = {
   router: {
-    base: process.env.DEPLOY_ENV === "GH_PAGES" ? "/nuxt-pixi/" : "/"
+    base: baseRoute(process.env.DEPLOY_ENV)
   },
   /*
   ** Headers of the page
@@ -12,7 +14,13 @@ module.exports = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "Nuxt.js project" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href: baseRoute(process.env.DEPLOY_ENV) + "favicon.ico"
+      }
+    ]
   },
   plugins: [{ src: "@/plugins/pixi", ssr: false }],
   /*
