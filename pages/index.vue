@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Nuxt + PIXI Sample</h1>
+    <h1>Nuxt + PixiJS Sample</h1>
     <nav>
       <ul>
         <li><nuxt-link to="/container-pivot">Container Pivot</nuxt-link></li>

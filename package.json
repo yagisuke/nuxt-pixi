@@ -1,7 +1,7 @@
 {
   "name": "nuxt-pixi",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "Nuxt + PixiJS project",
   "author": "yagisuke <yagisuke.0209@gmail.com>",
   "private": true,
   "scripts": {
