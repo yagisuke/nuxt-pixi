@@ -12,6 +12,7 @@
 <script>
 export default {
   mounted: function() {
+    const BASE_URL = this.$router.options.base
     const app = new PIXI.Application(800, 600, { backgroundColor: 0x1099bb })
     document.getElementById("pixi").appendChild(app.view)
 
@@ -20,7 +21,9 @@ export default {
     app.stage.addChild(container)
 
     // Create a new texture
-    const texture = PIXI.Texture.fromImage("/container-pivot/santa.gif")
+    const texture = PIXI.Texture.fromImage(
+      `${BASE_URL}container-pivot/santa.gif`
+    )
 
     // Create a 5x5 grid of bunnies
     for (let i = 0; i < 25; i++) {

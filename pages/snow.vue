@@ -12,6 +12,8 @@
 <script>
 export default {
   mounted: function() {
+    const BASE_URL = this.$router.options.base
+
     class SnowParticle {
       constructor($WRAPPER, IMAGES, QUANTITY, SIZE, SPEED) {
         const app = new PIXI.Application(800, 600, {
@@ -85,12 +87,11 @@ export default {
     class Snow {
       constructor() {
         const $WRAPPER = document.getElementById("pixi")
-
         // 雪の画像
         const IMAGES = [
-          "/snow/snow-1.png",
-          "/snow/snow-2.png",
-          "/snow/snow-3.png"
+          `${BASE_URL}snow/snow-1.png`,
+          `${BASE_URL}snow/snow-2.png`,
+          `${BASE_URL}snow/snow-3.png`
         ]
 
         // 降らせる雪の数
