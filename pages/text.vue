@@ -12,6 +12,8 @@
 <script>
 export default {
   mounted: function() {
+    const BASE_URL = this.$router.options.base
+
     // レンダラーの生成
     const app = PIXI.autoDetectRenderer(800, 600, {
       backgroundColor: 0x1099bb
@@ -32,7 +34,7 @@ export default {
     })
 
     // 画像からスプライトを生成
-    var imgSprite = new PIXI.Sprite.from(`/snow/snow-1.png`)
+    var imgSprite = new PIXI.Sprite.from(`${BASE_URL}text/snow-1.png`)
     imgSprite.x = 8
     imgSprite.y = 8
     imgSprite.width = 350
