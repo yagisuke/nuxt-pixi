@@ -61,7 +61,7 @@ export default {
               PARTICLE.y += (PARTICLE.height / 5000) * PARTICLE.speed
 
               // 雪を回転
-              PARTICLE.rotation += 0.01
+              PARTICLE.rotation += 0.09
 
               // 画面の一番下に行った時縦の位置をリセット、横の位置をランダムに配置
               if (PARTICLE.y > app.screen.height + PARTICLE.height) {
