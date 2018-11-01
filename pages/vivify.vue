@@ -6,14 +6,14 @@
       <cite>http://vivify.mkcreative.cz/</cite>
     </a>
     <div class="page">
-      <div :style="{ backgroundImage: `url(${$router.options.base}magic/snow-1.png)` }" class="circle">
+      <div :style="{ backgroundImage: `url(${$router.options.base}vivify/safe.png)` }" class="circle">
         <div :class="{ 'pop-in': start1 }" class="box top-left">HONO</div>
         <div :class="{ 'unfold': start2 }" class="box top-right">BONO</div>
         <div :class="{ 'jump-in-left': start3 }" class="box bottom-left">OBENTO</div>
         <div :class="{ 'flip-in-x': start4 }" class="box bottom-right">TABETAI</div>
         <nuxt-link to="/" class="cover" />
       </div>
-      <div :style="{ backgroundImage: `url(${$router.options.base}magic/snow-1.png)` }" class="circle">
+      <div :style="{ backgroundImage: `url(${$router.options.base}vivify/stadium.png)` }" class="circle">
         <div :class="{ 'hit-left': start4 }" class="box top-left">HONO</div>
         <div :class="{ 'pull-up': start3 }" class="box top-right">BONO</div>
         <div :class="{ 'flip-in-y': start2 }" class="box bottom-left">OBENTO</div>
@@ -35,7 +35,14 @@ export default {
     }
   },
   mounted: function() {
+    this.showBox()
+
     setInterval(() => {
+      this.showBox()
+    }, 8500)
+  },
+  methods: {
+    showBox: function() {
       setTimeout(() => (this.start1 = true), 0)
       setTimeout(() => (this.start1 = false), 2500)
       setTimeout(() => (this.start2 = true), 2000)
@@ -44,7 +51,7 @@ export default {
       setTimeout(() => (this.start3 = false), 6500)
       setTimeout(() => (this.start4 = true), 6000)
       setTimeout(() => (this.start4 = false), 8500)
-    }, 8500)
+    }
   }
 }
 </script>
