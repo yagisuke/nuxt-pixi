@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="vivify">
     <h1>Vivify</h1>
     Reference:
     <a href="http://vivify.mkcreative.cz/" target="_blank">
@@ -7,17 +7,17 @@
     </a>
     <div class="page">
       <div :style="{ backgroundImage: `url(${$router.options.base}vivify/safe.png)` }" class="circle">
-        <div :class="{ 'pop-in': start1 }" class="box top-left">HONO</div>
-        <div :class="{ 'unfold': start2 }" class="box top-right">BONO</div>
-        <div :class="{ 'jump-in-left': start3 }" class="box bottom-left">OBENTO</div>
-        <div :class="{ 'flip-in-x': start4 }" class="box bottom-right">TABETAI</div>
+        <div :class="{ 'pop-in': start1, 'hide': !start1 }" class="box top-left">HONO</div>
+        <div :class="{ 'unfold': start2, 'hide': !start2 }" class="box top-right">BONO</div>
+        <div :class="{ 'jump-in-left': start3, 'hide': !start3 }" class="box bottom-left">OBENTO</div>
+        <div :class="{ 'flip-in-x': start4, 'hide': !start4 }" class="box bottom-right">TABETAI</div>
         <nuxt-link to="/" class="cover" />
       </div>
       <div :style="{ backgroundImage: `url(${$router.options.base}vivify/stadium.png)` }" class="circle">
-        <div :class="{ 'hit-left': start4 }" class="box top-left">HONO</div>
-        <div :class="{ 'pull-up': start3 }" class="box top-right">BONO</div>
-        <div :class="{ 'flip-in-y': start2 }" class="box bottom-left">OBENTO</div>
-        <div :class="{ 'pop-in-left': start1 }" class="box bottom-right">TABETAI</div>
+        <div :class="{ 'hit-left': start4, 'hide': !start4 }" class="box top-left">HONO</div>
+        <div :class="{ 'pull-up': start3, 'hide': !start3 }" class="box top-right">BONO</div>
+        <div :class="{ 'flip-in-y': start2, 'hide': !start2 }" class="box bottom-left">OBENTO</div>
+        <div :class="{ 'pop-in-left': start1, 'hide': !start1 }" class="box bottom-right">TABETAI</div>
         <nuxt-link to="/" class="cover" />
       </div>
     </div>
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style>
-.page {
+#vivify .page {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,19 +67,21 @@ export default {
   overflow: hidden;
 }
 
-.circle {
+#vivify .circle {
   position: relative;
   margin: auto;
   width: 300px;
   height: 300px;
   background-color: white;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   border: 1px solid white;
   border-radius: 50%;
 }
 
-.box {
-  display: none;
+#vivify .box {
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 100px;
@@ -89,76 +91,69 @@ export default {
   font-size: 32px;
   border-radius: 10px;
   animation-duration: 1s;
+  animation-fill-mode: none;
 }
 
-.top-left {
+#vivify .top-left {
   position: absolute;
   top: -25px;
   left: -25px;
 }
 
-.top-right {
+#vivify .top-right {
   position: absolute;
   top: -25px;
   right: -25px;
 }
 
-.bottom-left {
+#vivify .bottom-left {
   position: absolute;
   bottom: -25px;
   left: -25px;
 }
 
-.bottom-right {
+#vivify .bottom-right {
   position: absolute;
   bottom: -25px;
   right: -25px;
 }
 
-.cover {
+#vivify .cover {
   position: absolute;
   width: 300px;
   height: 300px;
   border-radius: 50%;
 }
 
-.pop-in {
-  display: inline-flex;
+#vivify .pop-in {
   animation-name: popIn;
 }
 
-.unfold {
-  display: inline-flex;
+#vivify .unfold {
   animation-name: unfold;
 }
 
-.jump-in-left {
-  display: inline-flex;
+#vivify .jump-in-left {
   animation-name: jumpInLeft;
 }
 
-.flip-in-x {
-  display: inline-flex;
+#vivify .flip-in-x {
   animation-name: flipInX;
 }
 
-.flip-in-y {
-  display: inline-flex;
+#vivify .flip-in-y {
   animation-name: flipInY;
 }
 
-.pull-up {
-  display: inline-flex;
+#vivify .pull-up {
   animation-name: pullUp;
 }
 
-.hit-left {
-  display: inline-flex;
+#vivify .hit-left {
   animation-name: hitLeft;
 }
 
-.pop-in-left {
-  display: inline-flex;
+#vivify .pop-in-left {
   animation-name: popInLeft;
 }
 
@@ -304,5 +299,9 @@ export default {
     animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform: scale3d(1, 1, 1);
   }
+}
+
+#vivify .hide {
+  display: none;
 }
 </style>
