@@ -3,6 +3,7 @@
     <h1>Little Something on Nuxt.js</h1>
     <nav>
       <ul>
+        <li><nuxt-link to="/simple-carousel">Simple Carousel(Transition-Group Tag)</nuxt-link></li>
         <li><nuxt-link to="/slide-modal">Slide Modal(Transition Tag)</nuxt-link></li>
         <li><nuxt-link to="/vivify">Vivify(CSS Animation)</nuxt-link></li>
         <li><nuxt-link to="/magic-animations">Magic Animations(CSS Animation)</nuxt-link></li>

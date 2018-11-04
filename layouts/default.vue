@@ -16,14 +16,17 @@ export default {
 </script>
 
 <style>
-.container {
-  padding-bottom: 100px;
-}
-
 *,
 *:before,
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+</style>
+
+
+<style lang="scss" scoped>
+.container {
+  padding-bottom: 100px;
 }
 </style>
