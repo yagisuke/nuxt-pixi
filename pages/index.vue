@@ -1,13 +1,14 @@
 <template>
   <div>
-    <h1>Nuxt + PixiJS Sample</h1>
+    <h1>Little Something on Nuxt.js</h1>
     <nav>
       <ul>
-        <li><nuxt-link to="/vivify">Vivify(unuse Pixi.js)</nuxt-link></li>
-        <li><nuxt-link to="/magic-animations">Magic Animations(unuse Pixi.js)</nuxt-link></li>
-        <li><nuxt-link to="/text">Text</nuxt-link></li>
-        <li><nuxt-link to="/snow">Snow</nuxt-link></li>
-        <li><nuxt-link to="/container-pivot">Container Pivot</nuxt-link></li>
+        <li><nuxt-link to="/slide-modal">Slide Modal(Transition Tag)</nuxt-link></li>
+        <li><nuxt-link to="/vivify">Vivify(CSS Animation)</nuxt-link></li>
+        <li><nuxt-link to="/magic-animations">Magic Animations(CSS Animation)</nuxt-link></li>
+        <li><nuxt-link to="/text">Text(Pixi.js)</nuxt-link></li>
+        <li><nuxt-link to="/snow">Snow(Pixi.js)</nuxt-link></li>
+        <li><nuxt-link to="/container-pivot">Container Pivot(Pixi.js)</nuxt-link></li>
       </ul>
     </nav>
   </div>
