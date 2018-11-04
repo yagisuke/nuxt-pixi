@@ -1,21 +1,21 @@
 <template>
-  <div id="slide-modal">
-    <div class="button-container">
-      <button type="button" class="open-button" @click="showModal">
-        Open
-      </button>
-    </div>
-    <transition name="slide">
-      <div v-if="visibilty" class="modal">
-        <div class="modal-inner">
-          <p>This is a modal.</p>
-          <button type="button" class="close-button" @click="hideModal">
-            Close
-          </button>
-        </div>
+  <div>
+    <h1>Slide Modal</h1>
+    <p>This project is transition sample.</p>
+    <div class="slide-modal">
+      <div class="button-container">
+        <button type="button" class="open-button" @click="showModal">Open</button>
       </div>
-    </transition>
-  </div>  
+      <transition name="slide">
+        <div v-if="visibilty" class="modal">
+          <div class="modal-inner">
+            <p>This is a modal.</p>
+            <button type="button" class="close-button" @click="hideModal">Close</button>
+          </div>
+        </div>
+      </transition>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -36,23 +36,32 @@ export default {
 }
 </script>
 
-<style>
-#slide-modal {
-  overflow: hidden;
-  color: gray;
-}
-
-#slide-modal .button-container {
+<style lang="scss" scoped>
+.slide-modal {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 500px;
   height: 500px;
   background-color: aqua;
+  overflow: hidden;
 }
 
-#slide-modal .modal {
-  position: fixed;
+.open-button {
+  @extend %button;
+}
+
+.close-button {
+  @extend %button;
+
+  position: absolute;
+  top: -40px;
+  right: -40px;
+}
+
+.modal {
+  position: absolute;
   top: 0;
   left: 0;
   width: 500px;
@@ -61,18 +70,29 @@ export default {
   background-color: coral;
   justify-content: center;
   align-items: center;
+  color: gray;
+
+  .modal-inner {
+    position: relative;
+    width: 80%;
+    height: 300px;
+    background-color: beige;
+    border: 3px solid gray;
+    padding: 30px;
+  }
 }
 
-#slide-modal .modal-inner {
-  position: relative;
-  width: 80%;
-  height: 300px;
-  background-color: beige;
-  border: 3px solid gray;
-  padding: 30px;
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.25s ease-out;
 }
 
-#slide-modal button {
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(-100%);
+}
+
+%button {
   width: 80px;
   height: 80px;
   background-color: white;
@@ -85,22 +105,12 @@ export default {
   animation-duration: 1s;
   animation-timing-function: ease;
   animation-iteration-count: infinite;
-}
+  cursor: pointer;
+  outline: none;
 
-#slide-modal .close-button {
-  position: absolute;
-  top: -40px;
-  right: -40px;
-}
-
-#slide-modal .slide-enter-active,
-#slide-modal .slide-leave-active {
-  transition: transform 0.25s ease-out;
-}
-
-#slide-modal .slide-enter,
-#slide-modal .slide-leave-to {
-  transform: translateX(-100%);
+  &:hover {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes zoom-in {

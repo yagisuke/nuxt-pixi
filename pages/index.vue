@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Little Something on Nuxt.js</h1>
+    <h1>Little Somethings on Nuxt.js</h1>
     <nav>
       <ul>
         <li><nuxt-link to="/slide-modal">Slide Modal(Transition Tag)</nuxt-link></li>

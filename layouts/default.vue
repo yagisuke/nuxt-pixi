@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <nuxt/>
     <back-link v-if="$route.path !== '/'" />
   </div>
@@ -16,6 +16,10 @@ export default {
 </script>
 
 <style>
+.container {
+  padding-bottom: 100px;
+}
+
 *,
 *:before,
 *:after {

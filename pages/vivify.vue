@@ -1,5 +1,5 @@
 <template>
-  <div id="vivify">
+  <div>
     <h1>Vivify</h1>
     Reference:
     <a href="http://vivify.mkcreative.cz/" target="_blank">
@@ -7,20 +7,43 @@
     </a>
     <div class="page">
       <div :style="{ backgroundImage: `url(${$router.options.base}vivify/safe.png)` }" class="circle">
-        <div :class="{ 'pop-in': start1, 'hide': !start1 }" class="box top-left">HONO</div>
-        <div :class="{ 'unfold': start2, 'hide': !start2 }" class="box top-right">BONO</div>
-        <div :class="{ 'jump-in-left': start3, 'hide': !start3 }" class="box bottom-left">OBENTO</div>
-        <div :class="{ 'flip-in-x': start4, 'hide': !start4 }" class="box bottom-right">TABETAI</div>
+        <div v-if="start1" class="box top-left pop-in">HONO</div>
+        <div v-if="start2" class="box top-right unfold">BONO</div>
+        <div v-if="start3" class="box bottom-left jump-in-left">OBENTO</div>
+        <div v-if="start4" class="box bottom-right flip-in-x">TABETAI</div>
         <nuxt-link to="/" class="cover" />
       </div>
       <div :style="{ backgroundImage: `url(${$router.options.base}vivify/stadium.png)` }" class="circle">
-        <div :class="{ 'hit-left': start4, 'hide': !start4 }" class="box top-left">HONO</div>
-        <div :class="{ 'pull-up': start3, 'hide': !start3 }" class="box top-right">BONO</div>
-        <div :class="{ 'flip-in-y': start2, 'hide': !start2 }" class="box bottom-left">OBENTO</div>
-        <div :class="{ 'pop-in-left': start1, 'hide': !start1 }" class="box bottom-right">TABETAI</div>
+        <div v-if="start4" class="box top-left hit-left">HONO</div>
+        <div v-if="start3" class="box top-right pull-up">BONO</div>
+        <div v-if="start2" class="box bottom-left flip-in-y">OBENTO</div>
+        <div v-if="start1" class="box bottom-right pop-in-left">TABETAI</div>
         <nuxt-link to="/" class="cover" />
       </div>
     </div>
+    <pre style="margin-top: 16px;">
+      MIT License
+
+      Copyright (c) 2017 Martin Knize
+
+      Permission is hereby granted, free of charge, to any person obtaining a copy
+      of this software and associated documentation files (the "Software"), to deal
+      in the Software without restriction, including without limitation the rights
+      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+      copies of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be included in all
+      copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+      SOFTWARE.
+    </pre>
   </div>
 </template>
 
@@ -56,8 +79,8 @@ export default {
 }
 </script>
 
-<style>
-#vivify .page {
+<style lang="scss" scoped>
+.page {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +90,7 @@ export default {
   overflow: hidden;
 }
 
-#vivify .circle {
+.circle {
   position: relative;
   margin: auto;
   width: 300px;
@@ -80,7 +103,7 @@ export default {
   border-radius: 50%;
 }
 
-#vivify .box {
+.box {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -94,66 +117,66 @@ export default {
   animation-fill-mode: none;
 }
 
-#vivify .top-left {
+.top-left {
   position: absolute;
   top: -25px;
   left: -25px;
 }
 
-#vivify .top-right {
+.top-right {
   position: absolute;
   top: -25px;
   right: -25px;
 }
 
-#vivify .bottom-left {
+.bottom-left {
   position: absolute;
   bottom: -25px;
   left: -25px;
 }
 
-#vivify .bottom-right {
+.bottom-right {
   position: absolute;
   bottom: -25px;
   right: -25px;
 }
 
-#vivify .cover {
+.cover {
   position: absolute;
   width: 300px;
   height: 300px;
   border-radius: 50%;
 }
 
-#vivify .pop-in {
+.pop-in {
   animation-name: popIn;
 }
 
-#vivify .unfold {
+.unfold {
   animation-name: unfold;
 }
 
-#vivify .jump-in-left {
+.jump-in-left {
   animation-name: jumpInLeft;
 }
 
-#vivify .flip-in-x {
+.flip-in-x {
   animation-name: flipInX;
 }
 
-#vivify .flip-in-y {
+.flip-in-y {
   animation-name: flipInY;
 }
 
-#vivify .pull-up {
+.pull-up {
   animation-name: pullUp;
 }
 
-#vivify .hit-left {
+.hit-left {
   animation-name: hitLeft;
 }
 
-#vivify .pop-in-left {
+.pop-in-left {
   animation-name: popInLeft;
 }
 
@@ -299,9 +322,5 @@ export default {
     animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform: scale3d(1, 1, 1);
   }
-}
-
-#vivify .hide {
-  display: none;
 }
 </style>

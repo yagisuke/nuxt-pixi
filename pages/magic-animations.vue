@@ -1,5 +1,5 @@
 <template>
-  <div id="magic-animations">
+  <div>
     <h1>Magic Animations</h1>
     Reference:
     <a href="https://minimamente.com/example/magic_animations/" target="_blank">
@@ -7,20 +7,25 @@
     </a>
     <div class="page">
       <div :style="{ backgroundImage: `url(${$router.options.base}magic-animations/snow-1.png)` }" class="circle">
-        <div :class="{ 'puffIn': start1, 'hide': !start1 }" class="box top-left">HONO</div>
-        <div :class="{ 'vanish-in': start2, 'hide': !start2 }" class="box top-right">BONO</div>
-        <div :class="{ 'swash-in': start3, 'hide': !start3 }" class="box bottom-left">OBENTO</div>
-        <div :class="{ 'boing-in-up': start4, 'hide': !start4 }" class="box bottom-right">TABETAI</div>
+        <div v-if="start1" class="box top-left puff-in">HONO</div>
+        <div v-if="start2" class="box top-right vanish-in">BONO</div>
+        <div v-if="start3" class="box bottom-left swash-in">OBENTO</div>
+        <div v-if="start4" class="box bottom-right boing-in-up">TABETAI</div>
         <nuxt-link to="/" class="cover" />
       </div>
       <div :style="{ backgroundImage: `url(${$router.options.base}magic-animations/snow-2.png)` }" class="circle">
-        <div :class="{ 'space-in-down': start4, 'hide': !start4 }" class="box top-left">HONO</div>
-        <div :class="{ 'perspective-right-return': start3, 'hide': !start3 }" class="box top-right">BONO</div>
-        <div :class="{ 'perspective-left-return': start2, 'hide': !start2 }" class="box bottom-left">OBENTO</div>
-        <div :class="{ 'space-in-up': start1, 'hide': !start1 }" class="box bottom-right">TABETAI</div>
+        <div v-if="start4" class="box top-left space-in-down">HONO</div>
+        <div v-if="start3" class="box top-right perspective-right-return">BONO</div>
+        <div v-if="start2" class="box bottom-left perspective-left-return">OBENTO</div>
+        <div v-if="start1" class="box bottom-right space-in-up">TABETAI</div>
         <nuxt-link to="/" class="cover" />
       </div>
     </div>
+    <pre style="margin-top: 16px;">
+      Magic - Ver 1.3.0 - https://minimamente.com
+      Licensed under the MIT license
+      Copyright (c) 2018 Christian Pucci
+    </pre>
   </div>
 </template>
 
@@ -57,8 +62,8 @@ export default {
 }
 </script>
 
-<style>
-#magic-animations .page {
+<style lang="scss" scoped>
+.page {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +73,7 @@ export default {
   overflow: hidden;
 }
 
-#magic-animations .circle {
+.circle {
   position: relative;
   margin: auto;
   width: 300px;
@@ -81,8 +86,8 @@ export default {
   border-radius: 50%;
 }
 
-#magic-animations .box {
-  display: none;
+.box {
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 100px;
@@ -95,74 +100,66 @@ export default {
   animation-fill-mode: none;
 }
 
-#magic-animations .top-left {
+.top-left {
   position: absolute;
   top: -25px;
   left: -25px;
 }
 
-#magic-animations .top-right {
+.top-right {
   position: absolute;
   top: -25px;
   right: -25px;
 }
 
-#magic-animations .bottom-left {
+.bottom-left {
   position: absolute;
   bottom: -25px;
   left: -25px;
 }
 
-#magic-animations .bottom-right {
+.bottom-right {
   position: absolute;
   bottom: -25px;
   right: -25px;
 }
 
-#magic-animations .cover {
+.cover {
   position: absolute;
   width: 300px;
   height: 300px;
   border-radius: 50%;
 }
 
-#magic-animations .puffIn {
-  display: inline-flex;
+.puff-in {
   animation-name: puffIn;
 }
 
-#magic-animations .vanish-in {
-  display: inline-flex;
+.vanish-in {
   animation-name: vanishIn;
 }
 
-#magic-animations .swash-in {
-  display: inline-flex;
+.swash-in {
   animation-name: swashIn;
 }
 
-#magic-animations .boing-in-up {
-  display: inline-flex;
+.boing-in-up {
   animation-name: boingInUp;
 }
 
-#magic-animations .space-in-down {
-  display: inline-flex;
+.space-in-down {
   animation-name: spaceInDown;
 }
 
-#magic-animations .perspective-right-return {
-  display: inline-flex;
+.perspective-right-return {
   animation-name: perspectiveRightReturn;
 }
 
-#magic-animations .perspective-left-return {
-  display: inline-flex;
+.perspective-left-return {
   animation-name: perspectiveLeftReturn;
 }
 
-#magic-animations .space-in-up {
-  display: inline-flex;
+.space-in-up {
   animation-name: spaceInUp;
 }
 
@@ -278,9 +275,5 @@ export default {
     transform-origin: 50% 0%;
     transform: scale(1) translate(0%, 0%);
   }
-}
-
-#magic-animations .hide {
-  display: none;
 }
 </style>
