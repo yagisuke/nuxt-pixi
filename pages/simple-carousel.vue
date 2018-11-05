@@ -4,9 +4,9 @@
     <p>This project is transition-group sample.</p>
     <div class="container">
       <transition-group name="bk" tag="div">
-        <img v-if="index === 1" key="image1" :src="`${$router.options.base}simple-carousel/shimane.jpg`" width="640" alt="国賀海岸（赤尾展望台）">
-        <img v-if="index === 2" key="image2" :src="`${$router.options.base}simple-carousel/fukushima.jpg`" width="640" alt="毘沙門沼（五色沼湖沼群）の秋">
-        <img v-if="index === 3" key="image3" :src="`${$router.options.base}simple-carousel/nagano.jpg`" width="640" alt="硫黄岳 爆裂火口">
+        <div v-if="index === 1" key="image1" :style="{ backgroundImage: `url(${$router.options.base}simple-carousel/shimane.jpg)` }" class="cover-image" />
+        <div v-if="index === 2" key="image2" :style="{ backgroundImage: `url(${$router.options.base}simple-carousel/fukushima.jpg)` }" class="cover-image" />
+        <div v-if="index === 3" key="image3" :style="{ backgroundImage: `url(${$router.options.base}simple-carousel/nagano.jpg)` }" class="cover-image" />
       </transition-group>
       <button type="button" class="button prev-button" @click="prev">PREV</button>
       <button type="button" class="button next-button" @click="next">NEXT</button>
@@ -55,6 +55,14 @@ export default {
   border: 3px solid gray;
   overflow: hidden;
   font-size: 0;
+}
+
+.cover-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
 }
 
 .button {
