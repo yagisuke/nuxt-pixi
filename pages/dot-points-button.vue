@@ -2,11 +2,11 @@
   <div>
     <h1>Dot Points Button</h1>
     <div class="background">
-      <a :class="{ 'clicked-link': clicked }" class="dot-points-button" title="click!" @click="clicked = !clicked">
+      <button :class="{ 'clicked-link': clicked }" type="button" class="dot-points-button" title="click!" @click="clicked = !clicked">
         <span class="dot" />
         <span class="dot" />
         <span class="dot" />
-      </a>
+      </button>
     </div>
   </div>
 </template>
@@ -37,10 +37,13 @@ export default {
   align-items: center;
   width: 40px;
   height: 40px;
+  padding: 0;
   border-radius: 50%;
+  border: none;
   background-color: lightpink;
   line-height: 0;
   cursor: pointer;
+  outline: none;
 
   > .dot {
     display: inline-block;
